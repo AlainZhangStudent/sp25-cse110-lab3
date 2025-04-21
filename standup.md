@@ -1,5 +1,6 @@
 # Daily Standup Notes
 ## Name
+-
 insert name
 ---
 
