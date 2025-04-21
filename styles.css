@@ -12,6 +12,7 @@
     --border: #dadce0;
     --spacing-unit: 1rem;
     --max-width: 1200px;
+    --min-width: 120px;
     --saturation: hsl(210, 100%, 50%); 
     --color-gamut: color(display-p3 0.2 0.6 0.8); 
     --color-gamut-mix: color-mix(in srgb, var(--primary) 70%, var(--accent) 30%);
@@ -35,7 +36,7 @@
     margin: 2rem auto;
   }
 
-
+  
   .padding-longhand {
     padding-top: 10px;
     padding-right: 20px;
@@ -85,10 +86,10 @@
   .position-sticky {
     position: sticky;
     top: 0;
-    background-color: var(--bg-alt);
+    background-color: var(--bg);
     z-index: 100;
     padding: 1rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--bg-alt);
   }
 
   /*reset + styles*/
@@ -105,6 +106,7 @@
     background-color: var(--bg); /*background*/
     padding: var(--spacing-unit);
     max-width: var(--max-width);
+    min-width: var(--min-width);
     margin: 0 auto;
   }
   
@@ -197,7 +199,14 @@
   li {
     margin-bottom: 0.5rem;
   }
+
+  li:nth-child(1) {
+    background-color: var(--color-gamut-mix)
+  }
   
+  li:nth-child(1) {
+    background-color: var(--color-gamut)
+  }
   /*code*/
   code {
     font-family: 'Courier New', monospace;
@@ -219,6 +228,9 @@
     width: 100%;
     margin: 1rem 0;
     border-radius: 8px;
+    border-color: var(--saturation);
+    border-width: 0ch;
+    border-style: ridge;
   }
   
   /*form style*/
@@ -363,7 +375,7 @@
   /*pseudo elements*/
   footer::before {
     content: "❝";
-    display: block;
+    display: inline;
     font-size: 2rem;
     color: var(--secondary);
     text-align: center;
