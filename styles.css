@@ -376,6 +376,10 @@
     gap: 1.5rem;
     margin: 1rem 0;
   }
+
+  .media-grid img {
+    width: 100%;
+  }
   
   /*responsive*/
   @media (max-width: 768px) {
