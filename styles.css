@@ -1,0 +1,324 @@
+/* styles.css */
+/* CSS Variables with Fallbacks */
+:root {
+    --primary: #4285f4;
+    --secondary: #f4b400;
+    --accent: #34a853;
+    --danger: #ea4335;
+    --text: rgba(0, 0, 0, 0.87);
+    --text-light: rgba(0, 0, 0, 0.6);
+    --bg: white;
+    --bg-alt: #f8f9fa;
+    --border: #dadce0;
+    --spacing-unit: 1rem;
+    --max-width: 1200px;
+  }
+  
+  /* Reset and Base Styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif, system-ui;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg);
+    padding: var(--spacing-unit);
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  
+  /* Typography */
+  h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0.5em;
+    color: var(--primary);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.3rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    color: var(--accent);
+  }
+  
+  p {
+    margin-bottom: 1em;
+  }
+  
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  a:hover {
+    color: var(--danger);
+    text-decoration: underline;
+  }
+  
+  /* Layout */
+  header {
+    background-color: var(--bg-alt);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  nav {
+    margin: 1.5rem 0;
+  }
+  
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  section {
+    background-color: var(--bg-alt);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Fixed :has() selector - replaced color-mix with RGBA fallback */
+  section h2 {
+    background-color: rgba(66, 133, 244, 0.1); /* Light blue background for sections with h2 */
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-light);
+  }
+  
+  /* Lists */
+  ul, ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Code */
+  code {
+    font-family: 'Courier New', monospace;
+    background-color: #f0f0f0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  
+  /* Media Elements */
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  audio, video {
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 8px;
+  }
+  
+  /* Form Styles */
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  fieldset {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  legend {
+    padding: 0 0.5rem;
+    font-weight: bold;
+    color: var(--primary);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: inherit;
+  }
+  
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: 0.5rem;
+  }
+  
+  button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s, transform 0.1s;
+  }
+  
+  button:hover {
+    background-color: #3367d6;
+  }
+  
+  button:active {
+    transform: scale(0.98);
+  }
+  
+  /* Fixed nested selectors - converted to standard CSS */
+  form > fieldset {
+    margin-bottom: 2rem;
+  }
+  
+  form > fieldset > legend {
+    font-size: 1.2rem;
+  }
+  
+  form button[type="submit"] {
+    background-color: var(--accent);
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #2d9246;
+  }
+  
+  /* Utility Classes */
+  .text-center {
+    text-align: center;
+  }
+  
+  .mb-1 { margin-bottom: 0.5rem; }
+  .mb-2 { margin-bottom: 1rem; }
+  .mb-3 { margin-bottom: 1.5rem; }
+  
+  /* Flexbox Example */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  /* Grid Example */
+  .media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      padding: 0.5rem;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    main {
+      grid-template-columns: 1fr;
+    }
+    
+    .nav-container {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+    
+    section {
+      padding: 1rem;
+    }
+  }
+  
+  /* Advanced Selectors */
+  input:not([type="radio"]):not([type="checkbox"]) {
+    height: 2.5rem;
+  }
+  
+  /* Pseudo-elements */
+  footer::before {
+    content: "❝";
+    display: block;
+    font-size: 2rem;
+    color: var(--secondary);
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  main {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  /* Print Styles */
+  @media print {
+    nav, footer {
+      display: none;
+    }
+    
+    body {
+      padding: 0;
+      color: black;
+      background: white;
+    }
+    
+    section {
+      page-break-inside: avoid;
+      box-shadow: none;
+      background: white;
+      border: 1px solid #ddd;
+    }
+  }
