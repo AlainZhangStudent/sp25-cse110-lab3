@@ -12,8 +12,85 @@
     --border: #dadce0;
     --spacing-unit: 1rem;
     --max-width: 1200px;
+    --saturation: hsl(210, 100%, 50%); 
+    --color-gamut: color(display-p3 0.2 0.6 0.8); 
+    --color-gamut-mix: color-mix(in srgb, var(--primary) 70%, var(--accent) 30%);
   }
   
+  .margin-longhand {
+    margin-top: 15px;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+  }
+
+  .margin-shorthand {
+    margin: 15px 25px 15px 25px; /* top right bottom left */
+    margin: 15px 25px; /* vertical horizontal */
+  }
+
+
+  .margin-auto {
+    width: 80%;
+    margin: 2rem auto;
+  }
+
+
+  .padding-longhand {
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+  }
+
+  .padding-shorthand {
+    padding: 10px 20px 10px 20px; 
+    padding: 10px 20px; 
+  }
+
+  .border-longhand {
+    border-width: 3px;
+    border-style: dotted;
+    border-color: var(--accent);
+    border-radius: 5px;
+  }
+
+  .border-shorthand {
+    border: 2px solid var(--danger);
+    border-radius: 8px;
+  }
+
+  .display-none {
+    display: none; 
+  }
+
+  .display-inline {
+    display: inline; 
+  }
+
+  .display-block {
+    display: block; 
+  }
+
+  .display-inline-block {
+    display: inline-block; 
+  }
+
+  .position-relative {
+    position: relative;
+    top: 10px;
+    left: 20px;
+  }
+
+  .position-sticky {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-alt);
+    z-index: 100;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
   /*reset + styles*/
   * {
     box-sizing: border-box;
@@ -25,7 +102,7 @@
     font-family: 'Roboto', sans-serif, system-ui;
     line-height: 1.6;
     color: var(--text);
-    background-color: var(--bg);
+    background-color: var(--bg); /*background*/
     padding: var(--spacing-unit);
     max-width: var(--max-width);
     margin: 0 auto;
@@ -34,12 +111,12 @@
   /*typography*/
   h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 0.5em;
-    color: var(--primary);
+    margin-bottom: 0.5em; /*relative unit 1*/
+    color: var(--primary, #333); /*fallback*/
   }
   
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /*relative unit 2*/
     text-align: center;
     margin: 1rem 0;
   }
@@ -56,7 +133,7 @@
   }
   
   p {
-    margin-bottom: 1em;
+    margin-bottom: 1vw; /*relative unit 3*/
   }
   
   a {
@@ -74,7 +151,7 @@
   header {
     background-color: var(--bg-alt);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 8px; /*absolute unit 1*/
     margin-bottom: 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -94,7 +171,7 @@
   section {
     background-color: var(--bg-alt);
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 8pt; /*absolute unit 2*/
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
   
@@ -107,7 +184,7 @@
     text-align: center;
     padding: 1.5rem;
     margin-top: 2rem;
-    border-top: 1px solid var(--border);
+    border-top: 1pc solid var(--border); /*absolute unit 3*/
     color: var(--text-light);
   }
   
