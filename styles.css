@@ -17,7 +17,42 @@
     --color-gamut: color(display-p3 0.2 0.6 0.8); 
     --color-gamut-mix: color-mix(in srgb, var(--primary) 70%, var(--accent) 30%);
   }
+
+  h2 ~ p {
+    margin-top: 0.5rem;
+    color: var(--text-light);
+  }
+
+  h3 + p {
+    font-weight: bold;
+  }
+
+  button.primary {
+    background-color: var(--primary);
+    color: white;
+  }
   
+  section:has(img) {
+    border: 2px solid var(--accent);
+    padding: 1.5rem;
+  }
+
+  nav {
+    & ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    & li {
+        display: inline-block;
+        margin-right: 1rem;
+        
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+  }
+
   .margin-longhand {
     margin-top: 15px;
     margin-right: 25px;
@@ -149,6 +184,10 @@
     text-decoration: underline;
   }
   
+  #unfinished {
+    color:blue;
+  }
+
   /*layout*/
   header {
     background-color: var(--bg-alt);
