@@ -127,6 +127,10 @@
     border-bottom: 1px solid var(--bg-alt);
   }
 
+  div#footer1 {
+    font-weight: lighter;
+  }
+
   /*reset + styles*/
   * {
     box-sizing: border-box;
