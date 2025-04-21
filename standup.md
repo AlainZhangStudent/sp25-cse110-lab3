@@ -1,8 +1,7 @@
 # Daily Standup Notes
-## Name
--
-insert name
 ---
+## Name
+insert name
 
 ## Date & Time
 insert date, time
